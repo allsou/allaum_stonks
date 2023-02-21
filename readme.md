@@ -4,7 +4,7 @@
 
 # Context
 
-I have a list of previous analyzed brazilian stocks and reets to buy, but I want to buy it only when it's falling (not stonks).
+I have a list of previous analyzed brazilian stocks(ações) and reits(FIIs) to buy, but I want to buy it only when it's falling (not stonks).
 
 In my strategy it will increase my possibility to obtain gains, as long it was analyzed by professional research (stonks).
 
