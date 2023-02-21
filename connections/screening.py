@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+
 from settings.base import DEFAULT_SCREENING
 
 
@@ -12,5 +13,5 @@ class Screening(ABC):
         return getattr(module, path[-1])()
 
     @abstractmethod
-    def get_daily_volatility(self, asset: str) -> float:
+    def get_daily_volatility(self, asset: str):
         pass

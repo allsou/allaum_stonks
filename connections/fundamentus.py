@@ -1,8 +1,10 @@
+uimport pandas as pd
 import requests
-import pandas as pd
-import time
-from .screening import Screening
+
 from settings.base import LOGGER
+
+from .screening import Screening
+
 
 class Fundamentus(Screening):
     base_url = 'http://fundamentus.com.br'
@@ -13,15 +15,14 @@ class Fundamentus(Screening):
             'Accept-Encoding': 'gzip, deflate'
     }
 
-    def get_daily_volatility(self, asset: str) -> float:
+    def get_daily_volatility(self, asset: str):
         LOGGER.info(f'Getting asset {asset} daily variantion')
         url = f'{self.base_url}/detalhes.php?papel={asset}'
 
         response = requests.get(url, headers=self.headers)
         LOGGER.debug(f'Request status code: {response.status_code}')
         tables_html = pd.read_html(response.text, decimal=",", thousands='.')
-        time.sleep(.5)
-        return self.__parse_percent_to_float(tables_html[2][1][1])
+        return asset, self.__parse_percent_to_float(tables_html[2][1][1])
 
     def __parse_percent_to_float(self, value: str) -> float:
         value = value.replace('%', '')

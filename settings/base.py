@@ -1,5 +1,5 @@
-import os
 import logging
+import os
 from logging.config import fileConfig
 
 fileConfig('settings/logging_config.ini')
