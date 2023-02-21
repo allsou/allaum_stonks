@@ -1,4 +1,4 @@
-uimport pandas as pd
+import pandas as pd
 import requests
 
 from settings.base import LOGGER
