@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from settings import DEFAULT_SCREENING
+from settings.base import DEFAULT_SCREENING
 
 
 class Screening(ABC):
